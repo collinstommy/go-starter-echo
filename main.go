@@ -10,6 +10,8 @@ func main() {
 	e := echo.New()
 	template.NewTemplateRenderer(e)
 
+	e.Static("/static", "assets")
+
 	e.GET("/", func(c echo.Context) error {
 
 		component := components.Index("Jon")
